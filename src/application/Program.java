@@ -30,8 +30,7 @@ public class Program {
 				
 				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
 				UI.clearScreen();
-				UI.printBoard(chessMatch.getPieces(),possibleMoves);
-				
+				UI.printBoard(chessMatch.getPieces(),possibleMoves);				
 				
 				System.out.println();
 				System.out.print("Target: ");
@@ -49,10 +48,8 @@ public class Program {
 					while(!type.equals("B") && !type.equals("N") && !type.equals("R") && !type.equals("Q") ) {
 						System.out.print("Invalid value! Enter piece for promotion (B/N/R/Q): ");
 						type = sc.nextLine().toUpperCase();
-					}
-					
-					chessMatch.replacePromotedPiece(type);
-							
+					}					
+					chessMatch.replacePromotedPiece(type);							
 				}
 			}
 			catch (ChessException e ) {
@@ -62,8 +59,7 @@ public class Program {
 			catch (InputMismatchException e ) {
 				System.out.println(e.getMessage());
 				sc.nextLine();				
-			}
-			
+			}			
 		}
 		UI.clearScreen();
 		UI.printMatch(chessMatch, captured);
